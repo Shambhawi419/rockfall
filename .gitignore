@@ -1,0 +1,47 @@
+# -------------------------
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+
+# Virtual environments
+.env/
+.venv/
+env/
+tfnew/
+*.egg-info/
+
+# Checkpoints / Models
+checkpoints/*
+!checkpoints/README.md
+*.pt
+*.pth
+*.h5
+*.ckpt
+
+# Data
+data/*
+!data/README.md
+*.zip
+*.tif
+*.h5       # HDF5 datasets
+
+# Logs & temporary files
+*.log
+*.tmp
+.locks/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_convert/
+*.nbconvert.ipynb
+
+# IDE configurations
+.vscode/
+.idea/
+
+# Misc
+.DS_Store
+Thumbs.db

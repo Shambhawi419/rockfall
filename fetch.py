@@ -316,21 +316,48 @@ def process_new_image(image_name, verbose=True):
 
 
 # ----------------------------- Interactive chatbot
+# ----------------------------- Interactive chatbot
 if __name__ == "__main__":
     user_id = "Sana"
     print("Rockfall GPT Chatbot. Type 'exit' to quit.\n")
+    
+    # Plain text GPT query function
+    def query_gpt(user_id, msg):
+        history = get_user_history(user_id)
+        messages = [{"role": "system", "content": "You are a virtual mine assistant."}]
+        messages.extend(history)
+        messages.append({"role": "user", "content": msg})
+        
+        response = client_ai.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=messages,
+            max_tokens=200
+        )
+        reply = response.choices[0].message.content
+        history.append({"role":"user","content":msg})
+        history.append({"role":"assistant","content":reply})
+        save_user_history(user_id, history)
+        return reply
+
     while True:
         msg = input("You: ").strip()
         if msg.lower() in ["exit", "quit"]:
             break
+
+        # Image-based query
         if msg.startswith("image:"):
             img_name = msg.split("image:")[1].strip()
             if not img_name.startswith("image_"):
                 img_name = "image_" + img_name
+
             summary = summary_collection.find_one({"image": img_name})
             if not summary:
                 summary = process_new_image(img_name)
+
             reply = query_gpt_miner(user_id, summary, shap_dict=summary.get("shap_summary"))
+
+        # Plain text query
         else:
             reply = query_gpt(user_id, msg)
+
         print(f"{reply}\n")

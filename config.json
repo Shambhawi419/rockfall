@@ -1,26 +1,27 @@
 {
-  "train_img_dir": "D:/rockfall_ai/data/drone_img/landslide4sense/TrainData/img",
-  "train_mask_dir": "D:/rockfall_ai/data/drone_img/landslide4sense/TrainData/mask",
-
-  "valid_img_dir": "D:/rockfall_ai/data/drone_img/landslide4sense/ValidData/img",
-  "valid_mask_dir": "D:/rockfall_ai/data/drone_img/landslide4sense/ValidData/mask",
-
-  "test_img_dir": "D:/rockfall_ai/data/drone_img/landslide4sense/TestData/img",
-  "test_mask_dir": "D:/rockfall_ai/data/drone_img/landslide4sense/TestData/mask",
-
-  "dem_tif": "D:/rockfall_ai/data/clean_dataset/dem/mine_dem.tif",
-
-  "checkpoints_dir": "D:/rockfall_ai/checkpoints",
-  "best_checkpoint": "D:/rockfall_ai/checkpoints/best_multimodal.pt",
-  "last_checkpoint": "D:/rockfall_ai/checkpoints/last_multimodal.pt",
-  "logs_dir": "D:/rockfall_ai/logs",
-
-  "batch_size": 2,
-  "epochs": 25,
-  "img_size": 128,
-  "learning_rate": 0.001,
-  "accum_steps": 2,
-  "early_stop_patience": 5,
-  "max_channels": 12,
-  "seed": 42
+  "DATA_DIR": "D:/rockfall_ai/data/drone_img/landslide4sense",
+  "DEM_TIF": "D:/rockfall_ai/data/clean_dataset/dem/mine_dem.tif",
+  
+  "CHECKPOINT_DIR": "D:/rockfall_ai/checkpoints",
+  "BEST_PATH": "D:/rockfall_ai/checkpoints/best_multimodal.pt",
+  "LAST_PATH": "D:/rockfall_ai/checkpoints/last_multimodal.pt",
+  "LOGS_DIR": "D:/rockfall_ai/logs",
+  
+  "TRAIN_IMG_DIR": "D:/rockfall_ai/data/drone_img/landslide4sense/TrainData/img",
+  "TRAIN_MASK_DIR": "D:/rockfall_ai/data/drone_img/landslide4sense/TrainData/mask",
+  
+  "VALID_IMG_DIR": "D:/rockfall_ai/data/drone_img/landslide4sense/ValidData/img",
+  "VALID_MASK_DIR": "D:/rockfall_ai/data/drone_img/landslide4sense/ValidData/mask",
+  
+  "TEST_IMG_DIR": "D:/rockfall_ai/data/drone_img/landslide4sense/TestData/img",
+  "TEST_MASK_DIR": "D:/rockfall_ai/data/drone_img/landslide4sense/TestData/mask",
+  
+  "BATCH_SIZE": 2,
+  "EPOCHS": 25,
+  "IMG_SIZE": 128,
+  "LR": 0.001,
+  "ACCUM_STEPS": 2,
+  "EARLY_STOP_PATIENCE": 5,
+  "MAX_CHANNELS": 12,
+  "SEED": 42
 }
